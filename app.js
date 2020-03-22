@@ -1,7 +1,7 @@
 const express=require('express');
 const cookieParser=require('cookie-parser');
 //const path=require('path');
-const PORT=process.env.port || 8000;
+const port=process.env.PORT || 8000;
 const app=express();
 //layout
 const expressLayouts= require('express-ejs-layouts');
@@ -70,7 +70,7 @@ app.use(passport.setAuthenticatedUser);
 
 app.use('/',require('./routers/index'));
 
-app.listen(PORT,function(err,){
+app.listen(port,function(err,){
  
     if (err){
         console.log(`error in running the server : ${err}`);
@@ -78,5 +78,5 @@ app.listen(PORT,function(err,){
 
 
 
-    console.log(`server is up and running at port :${PORT}`);
+    console.log(`server is up and running at port :${port}`);
 }); 
