@@ -1,0 +1,29 @@
+<link rel="stylesheet"   type="text/css" href="/css/home.css">
+<div class="posts-container horizontal-list">
+<ul>
+<h1> ORDERS :</h1>
+<%for (order of customer.postsId ){%>
+<h1> Order:<%=count++%></h1>
+<li>
+<span>
+Food item:<%=order.content%>
+</span>
+<br>
+<span>
+Price: <%=order.price%>
+</span>
+<br>
+<span>
+Restaurant Name:<%=order.id%>
+
+</span>
+<form class="cancel-order" action="#" method="get">
+
+<input class="cancel-text" type="submit" value="cancel order">
+
+</form>
+</li>
+<%}%>
+
+</ul>
+</div>

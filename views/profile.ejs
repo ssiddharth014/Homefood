@@ -1,0 +1,16 @@
+<link rel="stylesheet"   type="text/css" href="/css/home.css">
+
+<h1>ALL MY ITEMS</h1>
+
+<div class="posts-container">
+<ul>
+<% for(ul of user.postid ){%>
+<li>
+<span>Item: <%=ul.content%></span><br>
+<span>Price: <%=ul.price%></span><br>
+<span>--------------------------------------------------------------</span><br>
+</li>
+<%}%>
+
+</ul>
+</div>

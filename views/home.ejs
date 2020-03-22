@@ -1,0 +1,105 @@
+  <link rel="stylesheet"   type="text/css" href="/css/home.css">
+
+<section id="feed-posts">
+
+<% if (locals.user){%>
+      
+      <div id ="feed-post">
+      <h4> HELLO <%= user.name %> </h4>
+      <h4>YOU CAN POST NEW FOOD ITEMS </h4>
+     <form  action="/posts/create"  id="new-post-form" method="post">
+         <input type="text" name="content"  required placeholder="Name of food item"> </textarea>
+         <input type="number" name ="price" placeholder="price" required>
+         <input type="submit" value="post">
+
+     </form>
+     </div>
+  <%}%>   
+
+<div class="posts-container horizontal-list">
+<ul>
+<h1>NEW ITEMS</h1>
+<% for (post of posts) {%>
+<li>
+
+<span >
+<%=post.content %>
+</span>
+<span>
+Price: <%=post.price %>	
+</span>
+<br>
+<span>
+   By  <%=post.user.name%>
+
+</span>
+<br>
+
+
+
+
+<% if (locals.user && locals.user.id == post.user.id) { %>
+<span> Your food item, wanna delete it... </span>
+<a href="/posts/destroy/<%=post.id%>">X</a>
+<%}%>
+
+
+<% if(!locals.user){%>
+<form action ="/customers/signIn"  method="get">
+
+<input type="submit" value ="order">
+</form>
+<%}%>
+</li>
+<%}%>
+</ul>
+</div>
+
+
+
+<%if(title=="HOME"){%>
+<ul>
+<h1>SEE BY RESTAURANTS</h1>
+<div class="restaurant">
+<% for( u of all_users){%>
+
+
+<li>
+<a> RESTAURANT NAME:  <%=u.name%></a><br>
+<a href="/users/dest/<%=u.id%>">delete</a>
+<span>--------------------------------------------------------------</span><br>
+
+<% for(ul of u.postid ){%>
+
+<span>Item: <%=ul.content%></span><br>
+<span>Price: <%=ul.price%></span><br>
+<%if(!locals.user){%>
+<form method="get" action="customers/signIn">
+<input type="submit" value="order">
+</form>
+<%}%>
+<span>--------------------------------------------------------------</span><br>
+<%}%>
+
+</li>
+<%}%>
+</div>
+</ul>
+
+<%}%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+</section>

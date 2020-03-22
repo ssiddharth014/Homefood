@@ -1,0 +1,86 @@
+
+       
+<link rel="stylesheet"   type="text/css" href="/css/home.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<section>
+
+<div class="posts-container horizontal-list   ">
+<ul>
+<% for (post of posts) {%>
+<li>
+<span>
+<%=post.content %>
+</span>
+<span>
+Price: <%=post.price %>
+</span>
+<br>
+<span>
+By :<%=post.user.name%>
+
+</span>
+
+
+
+
+<br>
+<form action="/customers/order/<%=post.id%>/<%=customer.id%>/<%=post.user.name%>/<%=post.user.id%>" method="post">
+<input type="hidden" name="userid" value="<%=post.user.id%>">
+<input type="submit" value="placeOrder">
+</form>
+</li>
+<%}%>
+</div>
+
+
+
+<ul>
+<h1>SEE BY RESTAURANTS</h1>
+<div class="btn btn-primary" data-toggle="collapse" data-target="#demo">
+<div id="demo" class="collapse" class="restaurant">
+<% for( u of all_users){%>
+
+
+<li>
+<a> RESTAURANT NAME:  <%=u.name%></a><br>
+<span>--------------------------------------------------------------</span><br>
+
+<% for(ul of u.postid ){%>
+
+<span>Item: <%=ul.content%></span><br>
+<span>Price: <%=ul.price%></span><br>
+<%if(!locals.user){%>
+<form method="post" action="/customers/order/<%=ul._ id%>/<%=customer.id%>/ <%=u.name%>/<%=u.id%>">
+<input type="submit" value="placeorder">
+</form>
+<%}%>
+<span>--------------------------------------------------------------</span><br>
+<%}%>
+
+</li>
+<%}%>
+</div>
+</div>
+</ul>
+<section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

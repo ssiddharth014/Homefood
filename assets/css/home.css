@@ -1,0 +1,46 @@
+.posts-container li{
+	width:100vw;
+	height:20vh;
+	background-color: lightgrey;
+	border:2px solid black;
+	margin-top:2px;
+	font-size:2rem;
+	color:red;
+
+
+
+}
+.restaurant li{
+	height:auto;
+	background-color: lightgrey;
+	border:2px solid black;
+	margin-top:4px;
+	font-size:2rem;
+	color:red;
+	text-decoration: none;
+	list-style: none;
+
+
+}
+
+
+
+ .horizontal-list li span{
+	display: inline-block;
+	justify-content: space-between;
+	margin: 0px 8px 8px 0px;
+	
+}
+
+
+
+.horizontal-list li a {
+	color: white;
+	text-decoration: none;
+	margin: 0px 8px 0px 8px;
+	font-size: 1.5rem;
+}
+#feed-post{
+	margin-left:33vw;
+	margin-right:33vw;
+}

@@ -1,0 +1,26 @@
+
+<link rel="stylesheet"   type="text/css" href="/css/home.css">
+<div class="posts-container horizontal-list">
+<ul>
+<h1>ORDERS ARRIVED:</h1>
+<%for (order of user.customersid ){%>
+<h2>Order No:<%=count++%></h2>
+
+<li>
+<span>
+ Order Name:<%=order.content%>
+</span>
+<br>
+<span>
+Price :<%=order.price%>
+</span>
+<br>
+<span>
+ Customer name :<%=order.id%>
+<span>
+
+</li>
+<%}%>
+
+</ul>
+</div>
