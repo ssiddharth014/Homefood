@@ -1,7 +1,7 @@
 const express=require('express');
 const cookieParser=require('cookie-parser');
 //const path=require('path');
-const port=process.env.PORT|| 8000;
+const PORT=process.env.port || 8000;
 const app=express();
 //layout
 const expressLayouts= require('express-ejs-layouts');
@@ -79,4 +79,4 @@ app.listen(port,function(err,){
 
 
     console.log(`server is up and running at port :${port}`);
-});
+}); 
