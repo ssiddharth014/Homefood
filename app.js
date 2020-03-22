@@ -70,7 +70,7 @@ app.use(passport.setAuthenticatedUser);
 
 app.use('/',require('./routers/index'));
 
-app.listen(port,function(err,){
+app.listen(PORT,function(err,){
  
     if (err){
         console.log(`error in running the server : ${err}`);
@@ -78,5 +78,5 @@ app.listen(port,function(err,){
 
 
 
-    console.log(`server is up and running at port :${port}`);
+    console.log(`server is up and running at port :${PORT}`);
 }); 
