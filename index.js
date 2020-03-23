@@ -1,7 +1,7 @@
 const express=require('express');
 const cookieParser=require('cookie-parser');
 //const path=require('path');
-const port=process.env.PORT || 8000;
+const port=process.env.PORT || 5000;
 const app=express();
 //layout
 const expressLayouts= require('express-ejs-layouts');
