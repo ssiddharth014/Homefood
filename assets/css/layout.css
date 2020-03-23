@@ -22,8 +22,9 @@ font-style: italic;
  	flex-direction: row;
  	justify-content: space-between;
  }
- body section{
+ body section form{
  	margin-top:5vh;
+ 	width:auto;
  }
 
 
