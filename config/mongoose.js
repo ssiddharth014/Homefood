@@ -1,19 +1,27 @@
-const mongoose= require('mongoose');
-
+ const mongoose= require('mongoose');
+const URL="mongodb+srv://dbuser:dbuser@cluster0-w0xwb.mongodb.net/test?retryWrites=true&w=majority";
 mongoose.connect('mongodb://localhost/social-house__development');
 
-const db=mongoose.connection;
+const db=async() =>{
+await mongoose.connect(URL,{userUnifiedTopology:true,useNewUrlParser:true})
+console.log('connected..');
+}
 
 
-db.on('error',console.error.bind(console,"error in connecting to mongodb"));
-
-
-
-
-
-
-db.once('open',function(){
-    console.log('connected to database :: mongodb');
-});
 
 module.exports=db;
+
+
+
+/*
+
+const MongoClient = require('mongoose');
+const uri = "mongodb+srv://dbuser:dbuser@cluster0-w0xwb.mongodb.net/test?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+module.exports=client;
+*/

@@ -7,6 +7,7 @@ const app=express();
 const expressLayouts= require('express-ejs-layouts');
 const db=require('./config/mongoose');
 
+db();
 // used for session cookie
 const session = require('express-session');
 //passport for users
@@ -38,6 +39,7 @@ app.set('layout extractScripts',true);
 app.use(express.static('./assets'));
 // middlewaare 
 // mongo store us used to store the sessio  cookie in the db
+/*
 app.use(session({
     name:'social-house',
     secret:"blahsomething",
@@ -56,7 +58,7 @@ app.use(session({
         }
     )
 }));
-
+*/
 
 app.use(passport.initialize());
 app.use(passport.session());
