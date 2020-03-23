@@ -1,7 +1,7 @@
 .posts-container li{
 	width:100vw;
 	height:20vh;
-	background-color: lightgrey;
+	background-color: #381414;
 	border:2px solid black;
 	margin-top:2px;
 	font-size:2rem;
@@ -12,11 +12,11 @@
 }
 .restaurant li{
 	height:auto;
-	background-color: lightgrey;
+	background-color: #381414;
 	border:2px solid black;
 	margin-top:4px;
 	font-size:2rem;
-	color:red;
+	color:#f1f1f1;
 	text-decoration: none;
 	list-style: none;
 
@@ -24,7 +24,12 @@
 }
 
 
-
+.color1{
+color:red;
+}
+.color2{
+	color:white;
+}
  .horizontal-list li span{
 	display: inline-block;
 	justify-content: space-between;

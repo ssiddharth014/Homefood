@@ -5,35 +5,96 @@ module.exports.create=function(req,res){
 	Post.create({
 		content:req.body.content,
 		price:req.body.price,
-		user:req.user._id
+		user:req.params.id
 	},
 	function(err,post){
 		if (err){console.log('error');return;}
          
 
-User.findById(req.user._id,function(err,user){
+User.findById(req.params.id,function(err,use){
 
-
-	if(user){
-		
-			user.postid.push( {_id:post.id,content:req.body.content,price:req.body.price});
-			user.save();
+console.log("user_found");
+	if(use){
+		console.log("user_found2");
+			use.postid.push( {content:req.body.content,price:req.body.price});
+			use.save();
 		}
+
+
+Post.find({}).populate('user').exec(function(err,posts){
+
+
+User.find({},function(err,users){
+
+
+
+
+        return res.render('home',{
+            "title":"Restaurant",
+            posts:posts,
+            all_users:users,
+            user:use
+        });
+
+});
+
+
+});
+
+
+
+
 	});
 
 });
 
-		return res.redirect('back');
+	
+
+
+
+
+
+
+
+
+
+
+
+
 	
 }
 
 
 module.exports.destroy=function(req,res){
-	Post.findById(req.params.id,function(err,post){
+	Post.findById(req.params.id1,function(err,post){
 		if(post){
-
+        console.log("post_removed")
 		post.remove();
-		return res.redirect('back');
+
+
+User.findById(req.params.id2,function(err,use){
+Post.find({}).populate('user').exec(function(err,posts){
+
+
+User.find({},function(err,users){
+
+
+
+
+        return res.render('home',{
+            title:"Restaurant",
+            posts:posts,
+            all_users:users,
+            user:use
+        });
+
+});
+
+
+});
+});
+
+
 	}
 	else
 	{

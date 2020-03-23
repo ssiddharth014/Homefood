@@ -3,13 +3,14 @@ const Post=require('../models/post');
 
 module.exports.profile=function(req,res){
 
-User.findById(req.params.id,function(err,user){
+User.findById(req.params.id,function(err,use){
 
-
-    if (user){
+console.log("searching");
+    if (use){
+        console.log("find");
         return res.render('profile',{
-            title:user.name,
-            users:user
+            title:"Restaurant",
+            user:use
         });
     }
 
@@ -38,7 +39,7 @@ User.findById(req.params.id,function(err,user){
 
     if (user){
         return res.render('view_orders',{
-            title:user.name,
+            title:"Restaurant",
             user:user,
             count:1
         });
@@ -117,7 +118,41 @@ module.exports.create=function(req,res)
 
 module.exports.createSession=function(req,res)
 {
-    return res.redirect('/');
+
+User.findOne({email :req.body.email},function(err,use){
+        if(err){
+            console.log('error in finding customer-->passport');
+            return res.render('user_sign_in',{title:"SignIn"});
+        }
+        if (!use || use.password !=req.body.password){
+            console.log('invalid   username/password');
+            return res.render('user_sign_in',{title:"SignIn"});
+        }
+
+
+Post.find({}).populate('user').exec(function(err,posts){
+
+
+User.find({},function(err,users){
+
+
+
+
+        return res.render('home',{
+            "title":"Restaurant",
+            posts:posts,
+            all_users:users,
+            user:use
+        });
+
+});
+
+
+});
+
+
+    });
+         
 }
 
 

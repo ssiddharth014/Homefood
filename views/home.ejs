@@ -5,10 +5,10 @@
 <% if (locals.user){%>
       
       <div id ="feed-post">
-      <h4> HELLO <%= user.name %> </h4>
+      <h2> HELLO <%= user.name %> </h2>
       <h4>YOU CAN POST NEW FOOD ITEMS </h4>
-     <form  action="/posts/create"  id="new-post-form" method="post">
-         <input type="text" name="content"  required placeholder="Name of food item"> </textarea>
+     <form  action="/posts/create/<%=user._id%>" id="new-post-form" method="post">
+         <input type="text" name="content"  required placeholder="Name of food item">
          <input type="number" name ="price" placeholder="price" required>
          <input type="submit" value="post">
 
@@ -18,7 +18,7 @@
 
 <div class="posts-container horizontal-list">
 <ul>
-<h1>NEW ITEMS</h1>
+<h1 class="color2">NEW ITEMS</h1>
 <% for (post of posts) {%>
 <li>
 
@@ -39,8 +39,8 @@ Price: <%=post.price %>
 
 
 <% if (locals.user && locals.user.id == post.user.id) { %>
-<span> Your food item, wanna delete it... </span>
-<a href="/posts/destroy/<%=post.id%>">X</a>
+<span class="color2"> Your food item, wanna delete it... </span>
+<a href="/posts/destroy/<%=post._id%>/<%=user._id%>">X</a>
 <%}%>
 
 
@@ -57,15 +57,15 @@ Price: <%=post.price %>
 
 
 
-<%if(title=="HOME"){%>
+<%if(title=="HOME"|| title=="Restaurant"){%>
 <ul>
-<h1>SEE BY RESTAURANTS</h1>
+<h1 class="color2">SEE BY RESTAURANTS</h1>
 <div class="restaurant">
 <% for( u of all_users){%>
 
 
 <li>
-<a> RESTAURANT NAME:  <%=u.name%></a><br>
+<a class="color1"> RESTAURANT NAME:  <%=u.name%></a><br>
 <span>--------------------------------------------------------------</span><br>
 
 <% for(ul of u.postid ){%>

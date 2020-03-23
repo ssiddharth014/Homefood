@@ -19,7 +19,7 @@ const passport=require('passport');
 
 const passportLocal= require('./config/passport-local-strategy');
 
-//const MongoStore=require('connect-Mongo')(session);
+const MongoStore=require('connect-Mongo')(session);
 //middleware for post request
 app.use(express.urlencoded());
 //middleware for cookie

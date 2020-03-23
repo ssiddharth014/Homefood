@@ -16,9 +16,9 @@ const usersController=require('../controllers/user_controller');
 //making profile page accessible only when a user is signed in
 //router.get('/profile',usersController.profile);-> if this is used profile page is aacessible even when a user is not signed in
 
-router.get('/profile/:id',passport.checkAuthentication,usersController.profile);
+router.get('/profile/:id',usersController.profile);
 
-router.get('/vieworders/:id',passport.checkAuthentication,usersController.vieworders);
+router.get('/vieworders/:id',usersController.vieworders);
 
 router.get('/signUp',usersController.signUp);
 router.get('/signIn',usersController.signIn);

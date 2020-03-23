@@ -1,9 +1,11 @@
  body{
- 	background-color: cyan;
+ 	background-color: #9c27b0;
+ 	overflow-x: hidden;
  }
  body header{
  	width:100vw;
- 	height:20vh;
+ 	height:auto;
+ 	min-height: 20vh;
  	background-color: red;
  	
  }
@@ -11,7 +13,8 @@
 #head{
 	padding-left:20vw;
 	padding-right:20vw;
-font-size: 5vh;
+font-size: 3rem;
+font-style: italic;
 }
 
  #head2{

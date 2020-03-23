@@ -9,10 +9,10 @@ const postController=require('../controllers/post_controller');
 
 
 
-router.post('/create',passport.checkAuthentication,postController.create);
+router.post('/create/:id',postController.create);
 
 
-router.get('/destroy/:id',passport.checkAuthentication,postController.destroy);
+router.get('/destroy/:id1/:id2',postController.destroy);
 
 
 module.exports=router;

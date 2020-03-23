@@ -4,11 +4,11 @@
 
 
 <ul class="horizontal-list">
-<%  if (locals.user) {%>
+<%  if (title=="Restaurant") {%>
  <li>
- <a href="/users/profile/<%=locals.user.id%>"><%=user.name%></a>
+ <a href="/users/profile/<%=user.id%>"><%=user.name%></a>
  </li>
- <li> <a href="/users/vieworders/<%=locals.user.id%>">View Orders</a></li>
+ <li> <a href="/users/vieworders/<%=user.id%>">View Orders</a></li>
  <li><a href="/users/signOut"> signOut </a>
  </li>
 
