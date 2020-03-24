@@ -6,8 +6,8 @@
  }
  body header{
  	width:100vw;
- 	height:30vh;
- 	min-height: 20vh;
+ 	height:auto;
+ 	min-height: 30vh;
  	background-image: url("https://b.zmtcdn.com/images/foodshots/cover/pizza3.jpg?output-format=webp");
  	background-repeat: repeat;
  	background-size: cover;
