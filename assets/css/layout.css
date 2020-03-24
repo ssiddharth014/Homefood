@@ -1,13 +1,19 @@
  body{
- 	background-color: #9c27b0;
+ 
+ background-color: lightgrey;
+
  	overflow-x: hidden;
  }
  body header{
  	width:100vw;
- 	height:auto;
+ 	height:30vh;
  	min-height: 20vh;
- 	background-color: red;
+ 	background-image: url("https://b.zmtcdn.com/images/foodshots/cover/pizza3.jpg?output-format=webp");
+ 	background-repeat: repeat;
+ 	background-size: cover;
  	
+ 	background-position: 100%;
+
  }
 
 #head{
@@ -15,6 +21,7 @@
 	padding-right:20vw;
 font-size: 3rem;
 font-style: italic;
+background-color: red;
 }
 
  #head2{
@@ -22,9 +29,9 @@ font-style: italic;
  	flex-direction: row;
  	justify-content: space-between;
  }
- body section form{
+ body section {
  	margin-top:5vh;
- 	width:auto;
+ 
  }
 
 

@@ -64,7 +64,7 @@ By :<%=post.user.name%>
 
 
 
-<input type="submit" value="place order">
+<input class="order-above" type="submit" value="place order">
 
 <span>--------------------------------------------------------------</span><br>
 
@@ -73,16 +73,33 @@ By :<%=post.user.name%>
 </li>
 <%}%>
 </ul>
+
 </section>
 
 
 
+<script>
+var element = document.getElementsByClassName("order-above");
+ 
+
+var myFunction = function( ) {
+   
+   
+   
+ window.alert("Order from new-items list");}
 
 
 
 
 
 
+
+
+
+for (var i = 0; i < element.length; i++) {
+    element[i].addEventListener('click', myFunction, false);
+};
+</script>
 
 
 

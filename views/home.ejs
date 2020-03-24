@@ -7,9 +7,13 @@
       <div id ="feed-post">
       <h2> HELLO <%= user.name %> </h2>
       <h4>YOU CAN POST NEW FOOD ITEMS </h4>
-     <form  action="/posts/create/<%=user._id%>" id="new-post-form" method="post">
+
+
+
+     <form  action="/posts/create/<%=user._id%>" id="new-post-form" enctype="multitype/form-data"method="post">
          <input type="text" name="content"  required placeholder="Name of food item">
          <input type="number" name ="price" placeholder="price" required>
+         <input type="file" name="avatar placehoder="Image">
          <input type="submit" value="post">
 
      </form>
