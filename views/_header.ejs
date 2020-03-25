@@ -16,7 +16,13 @@
 
 
 <li>
- <a href="/customers/profile/<%=customer.id%>"><%=customer.name%></a>
+ <a href="/customers/profile/<%=customer.id%>">Orders placed</a>
+ </li>
+
+
+
+<li>
+ <a href="/customers/ordersGiven/<%=customer.id%>">Profile</a>
  </li>
  <li><a href="/customers/signOut"> signOut </a>
  </li>
@@ -24,7 +30,7 @@
 
 <% } else  {%>
 <div id="head">
-WELCOME TO FOODSHALA...
+ FOODSHALA...
 </div>
 <div id="head2">
 

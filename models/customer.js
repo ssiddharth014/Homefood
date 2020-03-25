@@ -16,6 +16,12 @@ const customerSchema=new mongoose.Schema({
         required:true
 
     },
+    address:{
+        type:String,
+    },
+    phone:{
+        type:Number,
+    },
 preference:{
         type: String,
         required:true

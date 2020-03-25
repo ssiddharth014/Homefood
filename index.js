@@ -37,6 +37,8 @@ app.set('layout extractStyles',true);
 
 app.set('layout extractScripts',true);
 app.use(express.static('./assets'));
+
+
 // middlewaare 
 // mongo store us used to store the sessio  cookie in the db
 /*
@@ -64,7 +66,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 // this miidleware calls the setauthenticated function and usees the session cookie to feed the view with users info
 app.use(passport.setAuthenticatedUser);
-
 
 
 

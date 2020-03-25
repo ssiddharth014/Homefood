@@ -37,7 +37,14 @@ module.exports.create=function(req,res)
             return}
 
             if (!customer){
-            Customer.create(req.body,function(err,customer){
+            Customer.create({
+    name:req.body.name,
+    email:req.body.email,
+    address:req.body.address,
+    phone:req.body.phone,
+    password:req.body.password,
+    preference:req.body.preference
+  },function(err,customer){
                 if (err){console.log('error in  signing up');
                 return}
 
@@ -101,7 +108,7 @@ User.findById(req.params.id4,function(err,user){
 
 
 
-		user.customersid.push({id:customer.name,content:posts.content,price:posts.price});
+		user.customersid.push({id:customer.name,content:posts.content,price:posts.price,add:customer.address,ph:customer.phone});
 
 		user.save();
 	}
@@ -182,7 +189,62 @@ User.findById(req.params.id4,function(err,user){
 		
 */
 	
+module.exports.orderfrommenu=function(req,res){
 
+
+                         Customer.findById(req.params.id1,function(err,customer)
+                         {
+                             if (customer.id==req.params.id1){
+                                    
+
+
+
+if(customer){
+  console.log(customer.name);
+  customer.postsId.push({id:req.params.id2,content:req.params.id4,price:req.params.id5});
+  customer.save();
+
+User.findById(req.params.id3,function(err,user){
+  if(user.id==req.params.id3)
+  {
+    console.log(user.name);
+
+
+
+    user.customersid.push({id:customer.name,content:req.params.id4,price:req.params.id5,add:customer.address,ph:customer.phone});
+
+    user.save();
+  }
+});
+
+     
+                                console.log('order placed');
+
+
+
+                              
+                              return res.render('customer_profile',{
+                                               title:"CONSUMER",
+                                               count:1,
+                                               customer:customer
+                                            });
+     
+}
+}
+});
+}
+
+
+
+
+                              
+                           
+
+
+        
+
+
+  
 
 module.exports.createSession=function(req,res){
     // find a user and establish the identity
@@ -221,6 +283,7 @@ User.find({},function(err,users){
 
     });
 }
+
 module.exports.cancelorder=function(req,res){
 
 
@@ -269,7 +332,29 @@ console.log("3");
 }
 
 
+module.exports.ordersGiven=function(req,res){
 
+
+
+
+
+  Customer.findById(req.params.id,function(err,customer)
+                         {
+                             if (customer.id==req.params.id){
+
+                        return res.render('ordersGiven',{ title:"CONSUMER",
+                                               customer:customer
+
+});
+}
+else{
+  return res.render('customer_sign_in',{
+    title:"SIGN_UP",
+  });
+}
+});
+
+}
 
 // action for logging out
 module.exports.destroySession=function(req,res){

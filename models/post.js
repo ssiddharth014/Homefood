@@ -2,6 +2,8 @@
 //Food item schema
 const mongoose= require('mongoose');
 
+
+
 const postSchema=new mongoose.Schema({
     content:{
         type: String,
@@ -12,6 +14,9 @@ const postSchema=new mongoose.Schema({
     price:{
         type: Number,
         required: true
+    },
+    avatar:{
+        type:String
     },
 
 
@@ -34,6 +39,10 @@ const postSchema=new mongoose.Schema({
     timestamps:true
 
 });
+
+
+
+
 const Post= mongoose.model('Post',postSchema);
 
 module.exports=Post;

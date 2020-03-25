@@ -7,8 +7,6 @@
 	font-size:2rem;
 	color:red;
 
-
-
 }
 .restaurant li{
 	height:auto;
@@ -23,6 +21,12 @@
 
 }
 
+
+ .two{
+background-color: cyan;
+	height: 20vh;
+	width:55vw;
+}
 
 .color1{
 color:red;

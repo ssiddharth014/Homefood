@@ -137,7 +137,6 @@ User.find({},function(err,users){
 
 
 
-
         return res.render('home',{
             "title":"Restaurant",
             posts:posts,

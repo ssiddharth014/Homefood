@@ -30,6 +30,9 @@ By :<%=post.user.name%>
 <input type="hidden" name="userid" value="<%=post.user.id%>">
 <input type="submit" value="placeOrder">
 </form>
+
+
+
 </li>
 <%}%>
 </ul>
@@ -63,9 +66,10 @@ By :<%=post.user.name%>
 <span>Price: <%=ul.price%></span><br>
 
 
+<form action="/customers/orderfrommenu/<%=customer.id%>/<%=u.name%>/<%=u.id%>/<%=ul.content%>/<%=ul.price%>" method="post"">
 
-<input class="order-above" type="submit" value="place order">
-
+<input  type="submit" value="place order">
+</form>
 <span>--------------------------------------------------------------</span><br>
 
 

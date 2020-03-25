@@ -39,6 +39,8 @@ const userSchema=new mongoose.Schema({
     }],
     customersid :[{
         content:{type: String,},
+        add:{type:String},
+        ph:{type:Number},
         id:{type: String,},
         price:{type: Number,}
 

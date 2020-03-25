@@ -11,7 +11,6 @@
          <input type="text" name="content"  required placeholder="Name of food item">
          <input type="number" name ="price" placeholder="price" required>
          <input type="submit" value="post">
-
      </form>
      </div>
   <%}%>   
@@ -21,32 +20,23 @@
 <h1 class="color2">NEW ITEMS</h1>
 <% for (post of posts) {%>
 <li>
-
 <span >
 <%=post.content %>
 </span>
 <span>
-Price: <%=post.price %>	
+Price: <%=post.price %> 
 </span>
 <br>
 <span>
    By  <%=post.user.name%>
-
 </span>
 <br>
-
-
-
-
 <% if (locals.user && locals.user.id == post.user.id) { %>
 <span class="color2"> Your food item, wanna delete it... </span>
 <a href="/posts/destroy/<%=post._id%>/<%=user._id%>">X</a>
 <%}%>
-
-
 <% if(!locals.user){%>
 <form action ="/customers/signIn"  method="get">
-
 <input type="submit" value ="order">
 </form>
 <%}%>
@@ -62,14 +52,10 @@ Price: <%=post.price %>
 <h1 class="color2">SEE BY RESTAURANTS</h1>
 <div class="restaurant">
 <% for( u of all_users){%>
-
-
 <li>
 <a class="color1"> RESTAURANT NAME:  <%=u.name%></a><br>
 <span>--------------------------------------------------------------</span><br>
-
 <% for(ul of u.postid ){%>
-
 <span>Item: <%=ul.content%></span><br>
 <span>Price: <%=ul.price%></span><br>
 <%if(!locals.user){%>
@@ -79,12 +65,10 @@ Price: <%=post.price %>
 <%}%>
 <span>--------------------------------------------------------------</span><br>
 <%}%>
-
 </li>
 <%}%>
 </div>
 </ul>
-
 <%}%>
 
 

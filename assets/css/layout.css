@@ -13,12 +13,13 @@
  	background-size: cover;
  	
  	background-position: 100%;
+ 	background-attachment: fixed;
 
  }
 
 #head{
-	padding-left:20vw;
-	padding-right:20vw;
+	padding-left:30vw;
+	padding-right:30vw;
 font-size: 3rem;
 font-style: italic;
 background-color: red;
@@ -51,7 +52,8 @@ background-color: red;
 	font-size: 1.5rem;
 }
 body footer{
+	margin-top: 60vh;
 	width:100vw;
- 	height:auto;
- 	background-color: red;
+ 	height:15vh;
+ 	background-color: cyan;
 }
