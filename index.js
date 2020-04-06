@@ -32,6 +32,8 @@ app.use(expressLayouts);
 app.set('view engine','ejs');
 app.set('views','./views');
 
+app.use('/uploads',express.static(__dirname + '/uploads'));
+
 //extract styles and scripts for sub pages
 app.set('layout extractStyles',true);
 

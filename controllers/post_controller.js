@@ -2,10 +2,13 @@ const Post=require('../models/post');
 const User=require('../models/user');
 
 module.exports.create=function(req,res){
+
+	Post.uploadedAvatar(req,res,function(err){
 	Post.create({
 		content:req.body.content,
 		price:req.body.price,
-		user:req.params.id
+		user:req.params.id,
+		avatar:Post.avatarPath + '/' + req.file.filename
 	},
 	function(err,post){
 		if (err){console.log('error');return;}
@@ -45,6 +48,8 @@ User.find({},function(err,users){
 
 
 	});
+});
+
 
 });
 

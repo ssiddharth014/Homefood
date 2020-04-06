@@ -7,25 +7,33 @@
       <div id ="feed-post">
       <h2> HELLO <%= user.name %> </h2>
       <h4>YOU CAN POST NEW FOOD ITEMS </h4>
-     <form  action="/posts/create/<%=user._id%>" id="new-post-form" method="post">
+
+
+
+
+
+     <form  action="/posts/create/<%=user._id%>" id="new-post-form"  enctype="multipart/form-data" method="post">
          <input type="text" name="content"  required placeholder="Name of food item">
          <input type="number" name ="price" placeholder="price" required>
+         <input type="file" name="avatar" placeholder="item image">
          <input type="submit" value="post">
      </form>
      </div>
   <%}%>   
 
-<div class="posts-container horizontal-list">
+<div class="posts-container horizontal-list class="img-dis"">
 <ul>
 <h1 class="color2">NEW ITEMS</h1>
 <% for (post of posts) {%>
-<li>
+
+<li  style="display:flex ;flex-direction:row;justify-content:space-between">
+<div style="width:30vw"class="img">
 <span >
 <%=post.content %>
+
 </span>
 <span>
-Price: <%=post.price %> 
-</span>
+Price: <%=post.price %> </span>
 <br>
 <span>
    By  <%=post.user.name%>
@@ -40,6 +48,11 @@ Price: <%=post.price %>
 <input type="submit" value ="order">
 </form>
 <%}%>
+</div>
+<div style="padding-left:5vw;height:20vh; width:40vw">
+
+<img src="<%=post.avatar%>" alt="<%=post.name%>" width="100%" height="100%" ></span>
+</div>
 </li>
 <%}%>
 </ul>
