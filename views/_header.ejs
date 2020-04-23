@@ -11,16 +11,10 @@
  <li> <a href="/users/vieworders/<%=user.id%>">View Orders</a></li>
  <li><a href="/users/signOut"> signOut </a>
  </li>
-
 <% } else if( title=="CONSUMER")  {%>
-
-
 <li>
  <a href="/customers/profile/<%=customer.id%>">Orders placed</a>
  </li>
-
-
-
 <li>
  <a href="/customers/ordersGiven/<%=customer.id%>">Profile</a>
  </li>
@@ -29,15 +23,11 @@
  <h2>
  Hello....<%=customer.name%>
  </h2>
-
-
 <% } else  {%>
 <div id="head">
- FOODSHALA...
+ Ghar ka khana...
 </div>
 <div id="head2">
-
-
 <div>
 <li> <a href="/customers/signUp"> New Customer </a></li>
 <li> <a href="/users/signUp"> New Restaurnt</a></li>
@@ -47,7 +37,6 @@
 <li> <a href="/users/signIn"> Restaurant Login </a></li>
 </div>
 </div>
-
 <%}%>
 </ul>
 
